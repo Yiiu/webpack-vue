@@ -1,15 +1,8 @@
 var vue = require("vue");
 var VueRouter = require("vue-router")
 var app = require("./components/app.vue")
-var nav = require("./components/nav.vue")
 vue.use(VueRouter)
 // 定义组建
-var a = new vue({
-        el:"nav",
-        data: {
-            nav: nav
-        }
-});
 var Foo = vue.extend({
     template: 
         "<div>This is foo!</div>"+
