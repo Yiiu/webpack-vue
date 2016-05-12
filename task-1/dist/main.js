@@ -47,15 +47,8 @@
 	var vue = __webpack_require__(1);
 	var VueRouter = __webpack_require__(3)
 	var app = __webpack_require__(4)
-	var nav = __webpack_require__(7)
 	vue.use(VueRouter)
 	// 定义组建
-	var a = new vue({
-	        el:"nav",
-	        data: {
-	            nav: nav
-	        }
-	});
 	var Foo = vue.extend({
 	    template: 
 	        "<div>This is foo!</div>"+
@@ -12973,7 +12966,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/home/yuer/文档/vuejs/task-3/src/components/app.vue"
+	  var id = "/home/yuer/文档/vuejs/task/webpack-vue/task-1/src/components/app.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13011,35 +13004,6 @@
 /***/ function(module, exports) {
 
 	module.exports = "\n<div>{{hello}}</div>\n<a v-link=\"{path :'/hello'}\">hello</a>\n<router-view></router-view>\n";
-
-/***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(8)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
-	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
-	  if (!hotAPI.compatible) return
-	  var id = "/home/yuer/文档/vuejs/task-3/src/components/nav.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ },
-/* 8 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<nav>\n    <div id=\"app\">\n        <h1>hello app!</h1>\n        <p>\n            <!-- 使用指令 v-link 进行导航 -->\n            <a v-link=\"{ path: '/foo'}\">go Foo</a>\n            <a v-link=\"{ path: '/foo/hello'}\">go Foo/hello</a>\n            <a v-link=\"{ path: '/bar'}\">go Bar</a>\n        </p>\n        <router-view></router-view>\n    </div>\n</nav>\n";
 
 /***/ }
 /******/ ]);
