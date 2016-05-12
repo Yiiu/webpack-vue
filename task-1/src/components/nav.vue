@@ -1,0 +1,14 @@
+<template>
+    <nav>
+        <div id="app">
+            <h1>hello app!</h1>
+            <p>
+                <!-- 使用指令 v-link 进行导航 -->
+                <a v-link="{ path: '/foo'}">go Foo</a>
+                <a v-link="{ path: '/foo/hello'}">go Foo/hello</a>
+                <a v-link="{ path: '/bar'}">go Bar</a>
+            </p>
+            <router-view></router-view>
+        </div>
+    </nav>
+</template>

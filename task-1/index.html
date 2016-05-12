@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>my-project</title>
-  </head>
-  <body>
-    <app></app>
-    <!-- built files will be auto injected -->
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>hello app!</h1>
+        <p>
+        <div id="nav">{{nav}}</div>
+        
+            <!-- 使用指令 v-link 进行导航 -->
+            <a v-link="{ path: '/foo'}">go Foo</a>
+            <a v-link="{ path: '/foo/hello'}">go Foo/hello</a>
+            <a v-link="{ path: '/bar'}">go Bar</a>
+        </p>
+        <router-view></router-view>
+    </div>
+</body>
+<script src="./dist/main.js"></script>
 </html>
