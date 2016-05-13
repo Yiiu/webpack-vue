@@ -42,16 +42,17 @@ var Foo = vue.extend({
 })
 ```
 渲染相应的组建：
-``` html
+``` javascript
 router.map({
     '/foo' : {
-    component: Foo,
-    // 在/foo下设置一个子路由
-    subRoutes: {
-        "bar" : {
-            // 当匹配到/foo/bar时，会在Foo's <router-view>内渲染
-            component: Bar
+        component: Foo,
+        // 在/foo下设置一个子路由
+        subRoutes: {
+            "bar" : {
+                // 当匹配到/foo/bar时，会在Foo's <router-view>内渲染
+                component: Bar
+            }
         }
     }
-}
 })
+```
