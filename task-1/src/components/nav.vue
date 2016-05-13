@@ -1,5 +1,6 @@
+
 <template>
-    <nav>
+    <nav transition="expand">
         <h1>{{hello}}</h1>
         <p>
             <!-- 使用指令 v-link 进行导航 -->

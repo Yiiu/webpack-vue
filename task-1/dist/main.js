@@ -59,9 +59,13 @@
 	var Bar = vue.extend({
 	    template: 
 	        "<div>This is Bar!</div>"+
-	            "<h2>this is Bar  "+$router.path+"</h2>"+
+	            "<h2>this is Bar</h2>"+
 	            "<router-view></router-view>"+
 	        "</div>"
+	})
+	var user = vue.extend({
+	    template:
+	        "<p>用户名是{{$route.params.userId}}</p>"
 	})
 	var App = vue.extend({})
 	var router = new VueRouter()
@@ -79,7 +83,7 @@
 	            // /
 	            "/":{
 	                component:{
-	                    template:"<h2>zhuce</h2>"
+	                    template:"<h2 transition='expand'>zhuce</h2>"
 	                },
 	            },
 	            // foo/hello
@@ -92,6 +96,11 @@
 	    // bar
 	    "/bar" : {
 	        component: Bar
+	    },
+	    // 具名路由
+	    '/user/:userId': {
+	        name: 'user', // 给这条路径加上一个名字
+	        component: user
 	    }
 	})
 	// 开启路由功能
@@ -13033,7 +13042,7 @@
 /* 8 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<nav>\n    <h1>{{hello}}</h1>\n    <p>\n        <!-- 使用指令 v-link 进行导航 -->\n        <h1>hello in</h1>\n    </p>\n    <router-view></router-view>\n</nav>\n";
+	module.exports = "\n<nav transition=\"expand\">\n    <h1>{{hello}}</h1>\n    <p>\n        <!-- 使用指令 v-link 进行导航 -->\n        <h1>hello in {{$route.path}}</h1>\n    </p>\n    <router-view></router-view>\n</nav>\n";
 
 /***/ }
 /******/ ]);

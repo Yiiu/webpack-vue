@@ -23,6 +23,17 @@
     .nav p.navs {
         float: right;
     }
+    /* 必需 */
+.expand-transition {
+  transition: all .3s ease;
+  opacity: 1;
+}
+
+/* .expand-enter 定义进入的开始状态 */
+/* .expand-leave 定义离开的结束状态 */
+.expand-enter, .expand-leave {
+  opacity: 0;
+}
 </style>
 <body>
     <div id="app">
@@ -32,8 +43,8 @@
                 <!-- 使用指令 v-link 进行导航 -->
                 <a v-link="{ path: '/'}">go home</a>
                 <a v-link="{ path: '/sign'}">go sign</a>
-                <a v-link="{ path: '/bar'}">go Bar</a>
-                <!----> 具名路由
+                <a v-link="{ path: '/sign/in'}">go Bar</a>
+                <!-- 具名路由 --> 
                 <a v-link="{ name: 'user', params: { userId: 123 }}">User</a>
             </p>
         </div>

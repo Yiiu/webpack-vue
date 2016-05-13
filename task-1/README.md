@@ -12,7 +12,7 @@ html使用**v-link**进行导航,基本用法如下：
 </div>
 ```
 使用Javascript配合：
-``` javasript
+``` javascript
 // 定义组件
 var Foo = vue.extend({
     template: "<p>This is foo!</p>"
@@ -39,4 +39,19 @@ var Foo = vue.extend({
       '<h2>This is Foo!</h2>' +
       '<router-view></router-view>' + // <- 嵌套的外链
     '</div>'
+})
+```
+渲染相应的组建：
+``` html
+router.map({
+    '/foo' : {
+    component: Foo,
+    // 在/foo下设置一个子路由
+    subRoutes: {
+        "bar" : {
+            // 当匹配到/foo/bar时，会在Foo's <router-view>内渲染
+            component: Bar
+        }
+    }
+}
 })

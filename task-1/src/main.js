@@ -37,7 +37,7 @@ router.map({
             // /
             "/":{
                 component:{
-                    template:"<h2>zhuce</h2>"
+                    template:"<h2 transition='expand'>zhuce</h2>"
                 },
             },
             // foo/hello
