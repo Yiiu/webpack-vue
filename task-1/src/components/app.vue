@@ -1,13 +1,13 @@
 <template>
-    <div>{{hello}}</div>
-    <a v-link="{path :'/hello'}">hello</a>
+    <h2>{{hello}}</h2>
+    <a v-link="{path :'/sign'}">注册</a>
     <router-view></router-view>
 </template>
 <script>
     export default{
         data () {
            return {
-                hello:"这里是嵌套路由！！！1"
+                hello:"hello"
             }
         }
     }

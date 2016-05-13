@@ -4,15 +4,39 @@
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
+<style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    .nav{
+        min-width: 720px;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 70px;
+        background: #ccc;
+    }
+    .nav h1{
+        float: left;
+        font-size: 24px;
+    }
+    .nav p.navs {
+        float: right;
+    }
+</style>
 <body>
     <div id="app">
-        <h1>hello app!</h1>
-        <p>
-            <!-- 使用指令 v-link 进行导航 -->
-            <a v-link="{ path: '/foo'}">go Foo</a>
-            <a v-link="{ path: '/foo/hello'}">go Foo/hello</a>
-            <a v-link="{ path: '/bar'}">go Bar</a>
-        </p>
+        <div class="nav">
+            <h1>hello app!</h1>
+            <p class="navs">
+                <!-- 使用指令 v-link 进行导航 -->
+                <a v-link="{ path: '/'}">go home</a>
+                <a v-link="{ path: '/sign'}">go sign</a>
+                <a v-link="{ path: '/bar'}">go Bar</a>
+                <!----> 具名路由
+                <a v-link="{ name: 'user', params: { userId: 123 }}">User</a>
+            </p>
+        </div>
         <router-view></router-view>
     </div>
 </body>

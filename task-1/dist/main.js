@@ -47,44 +47,45 @@
 	var vue = __webpack_require__(1);
 	var VueRouter = __webpack_require__(3)
 	var app = __webpack_require__(4)
+	var nav = __webpack_require__(7)
 	vue.use(VueRouter)
 	// 定义组建
-	var Foo = vue.extend({
+	var sign = vue.extend({
 	    template: 
-	        "<div>This is foo!</div>"+
+	        "<div>sign</div>"+
 	            "<router-view></router-view>"+
 	        "</div>"
 	})
 	var Bar = vue.extend({
 	    template: 
-	        "<div>This is foo!</div>"+
-	            "<h2>this is Bar</h2>"+
+	        "<div>This is Bar!</div>"+
+	            "<h2>this is Bar  "+$router.path+"</h2>"+
 	            "<router-view></router-view>"+
 	        "</div>"
-	})
-	var hello = vue.extend({
-	    template: 
-	            "<h2>this is foo hello</h2>"
-	
 	})
 	var App = vue.extend({})
 	var router = new VueRouter()
 	// 定义路由规则
 	router.map({
-	    // foo
-	    "/foo" : {
-	        component: Foo,
+	    // home
+	    "/" : {
+	        name: "app",
+	        component: app
+	    },
+	    "/sign" : {
+	        component: sign,
 	        // 在foo 下设置一个子路由
 	        subRoutes:{
 	            // /
-	            "/": {
+	            "/":{
 	                component:{
-	                    template:"<h2>this is foo</h2>"
+	                    template:"<h2>zhuce</h2>"
 	                },
 	            },
 	            // foo/hello
-	            "/hello":{
-	                component: app
+	            "/in":{
+	                name:"hello",
+	                component: nav
 	            }
 	        }
 	    },
@@ -12984,15 +12985,15 @@
 	    value: true
 	});
 	// <template>
-	//     <div>{{hello}}</div>
-	//     <a v-link="{path :'/hello'}">hello</a>
+	//     <h2>{{hello}}</h2>
+	//     <a v-link="{path :'/sign'}">注册</a>
 	//     <router-view></router-view>
 	// </template>
 	// <script>
 	exports.default = {
 	    data: function data() {
 	        return {
-	            hello: "这里是嵌套路由！！！1"
+	            hello: "hello"
 	        };
 	    }
 	};
@@ -13003,7 +13004,36 @@
 /* 6 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div>{{hello}}</div>\n<a v-link=\"{path :'/hello'}\">hello</a>\n<router-view></router-view>\n";
+	module.exports = "\n<h2>{{hello}}</h2>\n<a v-link=\"{path :'/sign'}\">注册</a>\n<router-view></router-view>\n";
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_template__ = __webpack_require__(8)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/home/yuer/文档/vuejs/task/webpack-vue/task-1/src/components/nav.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 8 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<nav>\n    <h1>{{hello}}</h1>\n    <p>\n        <!-- 使用指令 v-link 进行导航 -->\n        <h1>hello in</h1>\n    </p>\n    <router-view></router-view>\n</nav>\n";
 
 /***/ }
 /******/ ]);
